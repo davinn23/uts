@@ -1,34 +1,28 @@
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+// src/components/Header.jsx
+import perpusLogo from "../assets/perpus.png"
+import DarkMode from "./DarkMode"
 
-export default function Header() {
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
-  });
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
-
+export default function Header({ onReset }) {
   return (
-    <header className="bg-blue-600 dark:bg-gray-900 text-white dark:text-gray-100 p-4 shadow-md">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold">
-          BookFinder
-        </Link>
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="px-3 py-1 rounded-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 shadow-md transition-colors"
+    <header className="bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-gray-900 dark:to-gray-800 shadow-md">
+      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+        {/* klik logo untuk reset */}
+        <div
+          className="flex items-center space-x-2 group cursor-pointer"
+          onClick={onReset}
         >
-          {darkMode ? "Light" : "Dark"}
-        </button>
+          <img
+            src={perpusLogo}
+            alt="BookFinder Logo"
+            className="w-10 h-10 transition-transform duration-300 group-hover:scale-110"
+          />
+          <span className="hidden sm:inline-block font-bold text-white text-xl group-hover:opacity-100 opacity-0 transition-opacity duration-500">
+            BookFinder
+          </span>
+        </div>
+
+        <DarkMode />
       </div>
     </header>
-  );
+  )
 }
