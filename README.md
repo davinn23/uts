@@ -32,10 +32,10 @@ Buka di browser pada alamat yang muncul (biasanya http://localhost:5173/)
 
 👥 Anggota Kelompok
 
-👤 Dafa Kevin Pratama
+👤 Dafa Kevin Pratama (Search, Header, Dark Mode, Data)
 
-👤 Fachry Luthfian
+👤 Fachry Luthfian (Pagination, Home)
 
-👤 Mochamad Firguna Aryan Herlambang
+👤 Mochamad Firguna Aryan Herlambang (Hosting, Data, Readme)
 
-👤 Wira Putra Dwi Baskara
+👤 Wira Putra Dwi Baskara (Book Card, Book Detail)
